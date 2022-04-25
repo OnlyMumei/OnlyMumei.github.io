@@ -1,15 +1,24 @@
 <head>
     <script>
-    function Count(){
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+    function Count(sound = false){
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.countapi.xyz/hit/mysite.com/visits");
+        xhr.open("GET", "https://api.countapi.xyz/hit/onlykronii.github.io/visits");
         xhr.responseType = "json";
         xhr.onload = function() {
             document.getElementById('visits').innerText = this.response.value;
         }
         xhr.send();
+        lst = ['1.wav','2.wav','3.mp3','4.mp3'];
+        if(sound){
+            var audio = new Audio('Sounds/' + lst[rand(0,lst.length)]);
+            audio.play();
+        }
     }
     Count();
+    //timerId = setInterval(Count, 60000);
     </script>
     <style>
     .wrap{
@@ -19,16 +28,37 @@
         align-items : center;
     }
     
+    .gwakButton{
+        background:#49538c;
+        border: none
+    }
+    
+    .gwakButton:not(:hover) .image {
+      opacity: 0.7;
+    }
+    
+    .gwakButton:hover .image {
+      opacity: 1;
+    }
+    
+    a:link{color:black;}
+    a:visited{color:black;}
+    a:hover{color:black;}
+    a:active{color:black;}
+    
     </style>
     </head>
-    <body style="background:#202D73d0;">
+    <body style="background:#49538c;">
         <div class="wrap">
-            <div>
+            <div class="box">
                <center>
-                  <h1 style="font-family:papyrus"><span id="visits"></span></h1>
-                  <p style="font-family:papyrus">Global Gwak Counter</p>
+                    <h1 style="font-family:papyrus; font-size:50px"><span id="visits"></span></h1>
+                    <p style="font-family:papyrus; font-size:30px">Global Gwak Counter</p>
+                    <button class="gwakButton" type="button" onclick="Count(true)"><img class="image"  src="button.png" alt="Button"></button><br><br>
+                    <p style="font-family:papyrus; font-size:20px"> Subscribe <a href="https://www.youtube.com/c/OuroKroniiCh">Ouro Kronii Ch. hololive-EN</a><br></p>
+                    <p style="font-family:papyrus; font-size:15px"> Illustrated by <a href="https://twitter.com/potatoshura">Shura</a><br></p>
+                    <p style="font-family:papyrus; font-size:15px"> Scripted by <a href="https://twitter.com/KyoKMonnoK">Kyono</a><br></p>
                </center>
-               <button type="button" onclick="Count()"><img src="button.png" alt="Button"></button>
            </div>
        </div>
     </body>
