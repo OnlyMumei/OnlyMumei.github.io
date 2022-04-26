@@ -7,13 +7,13 @@
     }
     function Count(sound = false){
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.countapi.xyz/hit/onlykronii.github.io/visits");
+        xhr.open("GET", "https://api.countapi.xyz/hit/onlymumei.github.io/visits");
         xhr.responseType = "json";
         xhr.onload = function() {
             document.getElementById('visits').innerText = this.response.value;
         }
         xhr.send();
-        lst = ['1.wav','2.wav','3.wav','4.wav','5.wav','6.wav','7.wav','8.wav','9.wav'];
+        lst = ['1.mp3'];
         if(sound){
             var audio = new Audio('Sounds/' + lst[rand(0,lst.length)]);
             audio.play();
@@ -31,7 +31,7 @@
     }
     
     .gwakButton{
-        background:#49538c;
+        background:#998173;
         border: none
     }
     
@@ -50,16 +50,15 @@
     
     </style>
     </head>
-    <body style="background:#49538c;">
+    <body style="background:#998173;">
         <div class="wrap">
             <div class="box">
                <center>
-                    <h1 style="font-family:papyrus; font-size:50px"><span id="visits"></span></h1>
-                    <p style="font-family:papyrus; font-size:30px">Global Gwak Counter</p>
-                    <button class="gwakButton" type="button" onclick="Count(true)"><img class="image"  src="button.png" alt="Button"></button><br><br>
-                    <p style="font-family:papyrus; font-size:20px"> Subscribe <a href="https://www.youtube.com/c/OuroKroniiCh">Ouro Kronii Ch. hololive-EN</a><br></p>
-                    <p style="font-family:papyrus; font-size:15px"> Illustrated by <a href="https://twitter.com/potatoshura">Shura</a><br></p>
-                    <p style="font-family:papyrus; font-size:15px"> Scripted by <a href="https://twitter.com/KyoKMonnoK">Kyono</a><br></p>
+                    <h1 style="font-family:sans; font-size:50px"><span id="visits"></span></h1>
+                    <p style="font-family:sans; font-size:30px">Global Oh hi Counter</p>
+                    <button class="gwakButton" type="button" onclick="Count(true)"><img class="image"  src="button.jpg" alt="Button"></button><br><br>
+                    <p style="font-family:sans; font-size:20px"> Subscribe <a href="https://www.youtube.com/channel/UC3n5uGu18FoCy23ggWWp8tA">Nanashi Mumei Ch. hololive-EN</a><br></p>
+                    <p style="font-family:sans; font-size:15px"> Scripted by <a href="https://twitter.com/KyoKMonnoK">Kyono</a><br></p>
                </center>
            </div>
        </div>
